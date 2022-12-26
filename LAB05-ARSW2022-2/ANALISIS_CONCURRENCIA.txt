@@ -1,0 +1,20 @@
+Integrantes
+- Yesid Carrillo
+- David Leon
+
+Parte 3:
+- Qué condiciones de carrera se podrían presentar?
+Una condición de carrera que se presenta es la de modificar un blueprint mientras que se está consultando estos. Ese comportamiento genera inconsistencia en los datos
+que se proporciona a lo usuarios debido a que al no ser actualizados correctamente no se muestra la informacion actual de lo que se esta busacndo en especifico
+
+Algo muy similar ocurre cuando se crea un blueprint y a la vez se intenta consultar este. Ese comportamiento genera inconsistencias en los datos proporcionados al
+usuario debido los planos resultantes de la busqueda no van a corresponder con el numero de planos reales ya que no se a actualizado correctamente
+
+- Cuales son las respectivas regiones críticas?
+Las regiones críticas son todos aquellos métodos que funcionen mediante peticiones HTTP (GET,POST,PUT,DELETE). Esto debido a que se accede al mismo recurso que en este caso es el arreglo de blueprint para realizar algun proceso del CRUD de la API. Esto puede generar problemas como deadLocks o
+comportamientos no deseados como las anteriormente mencionadas condiciones de carrera en los datos
+
+- SOLUCION
+Como solución a las secciones críticas y condiciones de carrera que se presentan. Se vuelve Thread-Safe la persistencia implementada, la cual en este
+caso es InMemoryBlueprintPersistence. Esto genera que el recurso compartido no pueda ser usado por más de un hilo a la vez. El recurso era el hashMap blueprints y pasa a ser un ConcurrentHashMap.
+

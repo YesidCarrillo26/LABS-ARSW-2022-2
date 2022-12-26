@@ -1,0 +1,4 @@
+Pregunta 10:
+
+Al realizar la prueba poniendo un numero considerable de inmortales nos dimos cuenta
+que en muchos casos estos estan peliando con inmortales ya muertos lo cual no deberia ocurrir.

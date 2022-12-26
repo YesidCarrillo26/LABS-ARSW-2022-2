@@ -1,0 +1,26 @@
+form {
+    margin: 20px 0;
+}
+
+form input,
+button,
+.button {
+    padding: 5px;
+    border-radius: 30px;
+    background-color: black;
+    font-size: medium;
+    color: white;
+}
+
+.grid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+body {
+    background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+}

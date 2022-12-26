@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+<head>
+    <title color="black">Blueprints</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/apimock.js"></script>
+    <script src="js/apiclient.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
+    
+
+</head>
+<body>
+    <body onload="Blueprint.init()">
+    <H1 style="margin-left:2rem" color="black">Blueprints</H1>
+    <label style="margin-left:2rem" COLOR="black">Author</label>
+    <input id = "AuthorInput"style = "margin-left:2rem" name="Author" type="text"></input>
+    <button style = "margin-left:2rem" id="GetBlueprintsButton" onclick="Blueprint.actualizarPlanos()" class="btn btn-warning">GetbluePrints</button>
+    <!--<button id="buttonCreateNewBlueprint" onclick="Blueprint.deletePrint()" class="btn btn-warning"> Create new bluePrint</button> -->
+    <form>
+        <input type="text" name="author" id="author">
+        <button style = "margin-left:2rem" id="buttonCreateNewBlueprint" onclick="Blueprint.capture()" class="btn btn-warning">Create new bluePrint</button>
+    </form>
+    <br><br><br>
+    <br><br><br>
+    <table style = "width:30%;margin-left:2rem" >
+        <tr>
+            <thead>
+                <th text-align="center" COLOR="black">BluePrint name</th>
+                <th text-align="center" COLOR="black">Number of points</th>
+                <th text-align="center" COLOR="black">Open</th>
+                <th></th>
+            </thead>
+        </tr>
+    </table>
+    <br><br>
+    <label style = "margin-left:2rem" id="blueprintsPointsLabel">Total user points</label><label style = "margin-left:2rem" id="totalPoints"></label>
+    <br>
+    <canvas id="myCanvas" width="300" height="300" style="position: absolute;left: 60rem; bottom: 30rem; border:1px solid rgb(7, 0, 41);"></canvas>
+
+    <div style="position: absolute;left: 60rem; bottom: 25rem;">
+        <button onclick="Blueprint.salvarPlano()" class="btn btn-warning">Save/Update</button>
+        <button onclick="Blueprint.deletePrint()" class="btn btn-warning">Delete</button>
+    </div>
+    <script src="js/apimock.js"></script>
+    <script src="js/apiclient.js"></script>
+    <script src="js/modules/canvas.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
